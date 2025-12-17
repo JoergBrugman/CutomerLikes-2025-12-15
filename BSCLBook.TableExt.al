@@ -11,6 +11,4 @@ tableextension 50200 "BSCL Book" extends "BSB Book"
             ToolTip = 'Specifies the value of the No. of Customer Likes field.', Comment = '%';
         }
     }
-
-    //TODO Im OnValidate von BSB Favorite Book No. für ein Modify auf den Debitor sorgen
 }
