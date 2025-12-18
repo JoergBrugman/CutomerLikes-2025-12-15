@@ -17,4 +17,16 @@ codeunit 50200 "BSCL Subscriber Store"
         IsHandled := true;
     end;
 
+    [EventSubscriber(ObjectType::Page, Page::"BSB Book List", OnBeforeProcessBookType, '', false, false)]
+    local procedure "BSB Book List_OnBeforeProcessBookType"(Rec: Record "BSB Book"; var IsHandled: Boolean)
+    var
+        BSCLBookTypeeBookImpl: Codeunit "BSCL Book Type eBook Impl.";
+    begin
+        if Rec.Type = "BSB Book Type"::eBook then begin
+            BSCLBookTypeeBookImpl.StartDeployBook();
+            BSCLBookTypeeBookImpl.StartDeliverBook();
+            IsHandled := true;
+        end
+    end;
+
 }
