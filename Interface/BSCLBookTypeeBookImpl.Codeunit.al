@@ -1,4 +1,4 @@
-codeunit 50210 "BSCL Book Type eBook Impl." implements "BSB Book Type Process"
+codeunit 50210 "BSCL Book Type eBook Impl." implements "BSB Book Type Process V2"
 {
     procedure StartDeployBook()
     begin
@@ -8,5 +8,10 @@ codeunit 50210 "BSCL Book Type eBook Impl." implements "BSB Book Type Process"
     procedure StartDeliverBook()
     begin
         Message('Download E-Mail an Käufer senden');
+    end;
+
+    procedure StartQualityCheck()
+    begin
+        message('PDF auf Portal überprüfen');
     end;
 }
